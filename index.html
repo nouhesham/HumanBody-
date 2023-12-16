@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HumanBody</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./stylesheet.css" />
+  </head>
+  <body>
+    <article>
+      <section class="flex-section">
+        <figure class="flex-section__image">
+          <img
+            src="./assets/human-body-human-anatomy-human-skeleton-stock-photography-others-removebg-preview (1).png"
+            alt="humanBodypicture"
+          />
+          <!-- <div class="rectangle">
+            <div class="first"></div>
+          </div> -->
+          <div class="circle body-parts__item" id="Skin"></div>
+          <div class="circle body-parts__item" id="Bones"></div>
+          <div class="circle body-parts__item" id="Joints"></div>
+          <div class="circle body-parts__item" id="PeripheralNerves"></div>
+          <div class="circle body-parts__item" id="Teeth"></div>
+          <div class="circle body-parts__item" id="Heart"></div>
+        </figure>
+
+        <div class="bodyColumn">
+          <button class="bodyColumn__button" data-id="Skin">
+            Skin <sup class="bodyColumn__button__numbers">5,17</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Bones">
+            Bones<sup class="bodyColumn__button__numbers">5</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Joints">
+            Joints<sup class="bodyColumn__button__numbers">17</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="PeripheralNerves">
+            Peripheral Nerves<sup class="bodyColumn__button__numbers">1</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Teeth">
+            Teeth<sup class="bodyColumn__button__numbers">18</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Heart">
+            Heart<sup class="bodyColumn__button__numbers">5,17</sup>
+          </button>
+        </div>
+        <div class="bodyColumn">
+          <button class="bodyColumn__button" data-id="ButtonVessels">
+            Button Vessels <sup class="bodyColumn__button__numbers">5</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="BoneMarrow">
+            Bone Marrow<sup class="bodyColumn__button__numbers">1</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Muscles">
+            Muscles<sup class="bodyColumn__button__numbers">18</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Retina">
+            Retina<sup class="bodyColumn__button__numbers">5,17</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Thyroid">
+            Thyroid<sup class="bodyColumn__button__numbers">2</sup>
+          </button>
+          <button class="bodyColumn__button" data-id="Kidneys">
+            Kydneys<sup class="bodyColumn__button__numbers">1</sup>
+          </button>
+        </div>
+      </section>
+    </article>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
