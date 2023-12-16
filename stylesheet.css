@@ -45,7 +45,6 @@ button {
 .bodyColumn {
   display: flex;
   flex-direction: column;
-  width: 20%;
 }
 .flex-section__image {
   position: relative;
