@@ -8,6 +8,17 @@
   margin: 0;
   padding: 0;
 }
+@keyframes borderAnimation {
+  0% {
+    border-color: white;
+  }
+  50% {
+    border-color: var(--darkRed);
+  }
+  100% {
+    border-color: white;
+  }
+}
 img {
   display: block;
   width: 100%;
@@ -39,19 +50,7 @@ button {
 .flex-section__image {
   position: relative;
 }
-.rectangle {
-  content: "";
-  background-color: transparent;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-}
-.first {
-  background-color: blue;
-  width: 20%;
-  height: 2rem;
-}
+
 .flex-section__body-parts {
   position: absolute;
   top: 0;
@@ -59,23 +58,66 @@ button {
   right: 0;
   bottom: 0;
 }
-.bodyColumn {
-  z-index: 9999;
+
+.bodyColumn__button__numbers {
+  font-size: 0.6rem;
 }
+
 .circle {
-  width: 2rem;
-  height: 2rem;
+  width: 1.8rem;
+  height: 1.8rem;
   background-color: var(--blue-color);
   border-radius: 50%;
   cursor: pointer;
   position: absolute;
 }
-.bodyColumn__button__numbers {
-  font-size: 0.6rem;
-}
 #Skin {
   top: 46%;
-  right: 5%;
+  right: 3%;
+}
+#Retina {
+  top: 3%;
+  right: 42%;
+}
+#Teeth {
+  top: 7.5%;
+  right: 46%;
+}
+#Joints {
+  bottom: 28%;
+  left: 33%;
+}
+#BloodVessels {
+  top: 31%;
+  left: 19%;
+}
+#Thyroid {
+  top: 13%;
+  right: 46%;
+}
+#Kidneys {
+  top: 35%;
+  right: 37%;
+}
+#Bones {
+  bottom: 3%;
+  right: 32%;
+}
+#Muscles {
+  right: 30%;
+  bottom: 34%;
+}
+#PeripheralNerves {
+  left: 33%;
+  bottom: 34%;
+}
+#BoneMarrow {
+  left: 33%;
+  bottom: 40%;
+}
+#Heart {
+  top: 22%;
+  right: 40%;
 }
 .Red {
   color: var(--darkRed);
@@ -90,13 +132,28 @@ button {
 
   background-color: var(--darkRed);
 }
+
 .SpottedCircle {
-  background-color: red;
-  box-shadow: 1px;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background-color: var(--darkRed);
+  border: 5px solid white;
+  outline: 1px solid var(--darkRed);
+  transition: all 0.3s ease;
 }
-/* adding mediaqueries */
+.SpottedCircle:hover {
+  animation: borderAnimation 1.5s infinite;
+}
+
 @media (max-width: 767px) {
   .flex-section {
+    flex-wrap: wrap;
+  }
+  .bodyColumn {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     flex-wrap: wrap;
   }
 }
