@@ -54,9 +54,18 @@ if (window.innerWidth > 768) {
     })
     .addTo(controller);
 }
+// function calculateTotalLabelsHeight() {
+//   var totalHeight = 0;
+//   var labels = document.querySelectorAll("#effector .bodyColumn__button");
+//   labels.forEach(function (label) {
+//     totalHeight += label.offsetHeight;
+//   });
+//   return totalHeight;
+// }
+let labelsHeight = calculateTotalLabelsHeight();
 var scene = new ScrollMagic.Scene({
   triggerElement: "#pinned",
-  duration: 300,
+  duration: labelsHeight,
 })
   .setPin("#pinned")
   .addIndicators({ name: "1 (duration: 300)" })
@@ -107,3 +116,7 @@ bodyColumnButtons.forEach((button) => {
 circles.forEach((circle) => {
   circle.addEventListener("click", handleBodyEvent);
 });
+
+// Assuming you have included ScrollMagic library and initialized a controller
+
+// Function to calculate the total height of labels
