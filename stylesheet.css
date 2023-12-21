@@ -188,6 +188,9 @@ button {
     width: 100%;
     flex-wrap: wrap;
   }
+  .empty {
+    display: none;
+  }
 }
 @media (max-width: 600px) {
   .bodyColumn {
