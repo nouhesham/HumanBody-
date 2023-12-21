@@ -144,6 +144,38 @@ button {
 .SpottedCircle:hover {
   animation: borderAnimation 1.5s infinite;
 }
+.empty,
+.second-section,
+.third-section {
+  position: relative;
+  padding: 2rem;
+}
+#animatedElement {
+  position: absolute;
+  top: 0;
+  right: 0%;
+  rotate: 90deg;
+}
+#animatedElement2 {
+  position: absolute;
+  right: 0%;
+  padding: 5rem;
+  margin: 2.5rem;
+}
+
+#animatedElement3 {
+  position: absolute;
+  left: 0%;
+  top: 0;
+}
+#animatedElement4 {
+  position: absolute;
+  left: 0%;
+}
+#animatedElement5 {
+  position: absolute;
+  left: 0%;
+}
 
 @media (max-width: 767px) {
   .flex-section {
@@ -154,5 +186,8 @@ button {
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
+  }
+  .empty {
+    display: none;
   }
 }

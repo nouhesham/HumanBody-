@@ -1,5 +1,60 @@
 "use strict";
 AOS.init();
+const animatedElement = document.querySelector("#animatedElement");
+if (window.innerWidth > 768) {
+  var controller = new ScrollMagic.Controller();
+
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#animatedElement",
+    duration: function () {
+      return window.innerHeight;
+    },
+  })
+    .setTween("#animatedElement2", { scale: 1.1, opacity: 0.5, y: 600 })
+    .addTo(controller);
+  //
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#animatedElement",
+    duration: function () {
+      return window.innerHeight;
+    },
+  })
+    .setTween("#animatedElement", { scale: 0.5, opacity: 0.5, y: 300 })
+    .addTo(controller);
+  //
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#animatedElement",
+    duration: function () {
+      return window.innerHeight;
+    },
+  })
+    .setTween("#animatedElement4", {
+      y: 600,
+      rotation: 360,
+    })
+    .addTo(controller);
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#animatedElement",
+    duration: 500,
+  })
+    .setTween("#animatedElement3", {
+      y: -100,
+      rotation: 360,
+    })
+    .addTo(controller);
+  var scene = new ScrollMagic.Scene({
+    triggerElement: "#animatedElement3",
+    duration: function () {
+      return window.innerHeight;
+    },
+  })
+    .setTween("#animatedElement5", {
+      x: "60%",
+      rotation: 360,
+      ease: Linear.easeNone,
+    })
+    .addTo(controller);
+}
 
 const bodyColumnButtons = document.querySelectorAll(".bodyColumn__button");
 const circles = document.querySelectorAll(".circle");
