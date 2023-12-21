@@ -1,6 +1,5 @@
 "use strict";
-AOS.init();
-const animatedElement = document.querySelector("#animatedElement");
+
 if (window.innerWidth > 768) {
   var controller = new ScrollMagic.Controller();
 

@@ -161,6 +161,7 @@ button {
   right: 0%;
   padding: 5rem;
   margin: 2.5rem;
+  z-index: -1;
 }
 
 #animatedElement3 {
@@ -187,7 +188,12 @@ button {
     width: 100%;
     flex-wrap: wrap;
   }
-  .empty {
-    display: none;
+}
+@media (max-width: 600px) {
+  .bodyColumn {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    overflow-y: scroll;
   }
 }
