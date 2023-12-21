@@ -54,6 +54,13 @@ if (window.innerWidth > 768) {
     })
     .addTo(controller);
 }
+var scene = new ScrollMagic.Scene({
+  triggerElement: "#pinned",
+  duration: 300,
+})
+  .setPin("#pinned")
+  .addIndicators({ name: "1 (duration: 300)" })
+  .addTo(controller);
 
 const bodyColumnButtons = document.querySelectorAll(".bodyColumn__button");
 const circles = document.querySelectorAll(".circle");
