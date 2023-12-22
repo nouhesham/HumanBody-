@@ -54,8 +54,7 @@ if (window.innerWidth > 768) {
     })
     .addTo(controller);
 }
-console.log("hello");
-//
+
 const bodyColumnButtons = document.querySelectorAll(" .bodyColumn__button");
 const circles = document.querySelectorAll(".circle");
 
@@ -122,23 +121,23 @@ if (window.innerWidth < 600) {
     const horizontalScroll = window.scrollY;
     flex.scrollLeft = horizontalScroll;
   });
-  const lastLabel = bodyColumnButtons[bodyColumnButtons.length - 1];
-  const getScrollEnd = () => {
-    const containerRect = container.getBoundingClientRect();
-    const labelRect = lastLabel.getBoundingClientRect();
+  // const lastLabel = bodyColumnButtons[bodyColumnButtons.length - 1];
+  // const getScrollEnd = () => {
+  //   const containerRect = container.getBoundingClientRect();
+  //   const labelRect = lastLabel.getBoundingClientRect();
 
-    return containerRect.width - labelRect.right;
-  };
+  //   return containerRect.width - labelRect.right;
+  // };
 
-  bodyColumnButtons.forEach((label, index) => {
-    ScrollTrigger.create({
-      trigger: label,
-      start: "left center",
-      end: () => `+=${getScrollEnd()}px`,
-      horizontal: true,
-      toggleClass: { targets: label, className: "red" },
-      scrub: 1.6,
-      invalidateOnRefresh: true,
-    });
-  });
+  // bodyColumnButtons.forEach((label, index) => {
+  //   ScrollTrigger.create({
+  //     trigger: label,
+  //     start: "left center",
+  //     end: () => `+=${getScrollEnd()}px`,
+  //     horizontal: true,
+  //     toggleClass: { targets: label, className: "red" },
+  //     scrub: 1.6,
+  //     invalidateOnRefresh: true,
+  //   });
+  // });
 }
