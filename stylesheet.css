@@ -171,7 +171,7 @@ button {
 .flex {
   display: flex;
   flex-direction: row;
-  width: 53%;
+  width: 100%;
   justify-content: space-around;
 }
 @media (max-width: 767px) {
@@ -194,11 +194,19 @@ button {
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    width: 100%;
+
     justify-content: initial;
+    border-top: 2px solid lightgray;
+    margin-top: 2rem;
   }
   .Red {
-    border-bottom: 4px solid var(--darkRed);
+    border-top: 3px solid var(--darkRed);
     border-left: none;
   }
+  button {
+    font-size: 1rem;
+  }
+}
+.bodyColumn__button {
+  width: 100%;
 }

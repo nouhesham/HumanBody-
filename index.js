@@ -54,24 +54,9 @@ if (window.innerWidth > 768) {
     })
     .addTo(controller);
 }
-// function calculateTotalLabelsHeight() {
-//   var totalHeight = 0;
-//   var labels = document.querySelectorAll("#effector .bodyColumn__button");
-//   labels.forEach(function (label) {
-//     totalHeight += label.offsetHeight;
-//   });
-//   return totalHeight;
-// }
-let labelsHeight = calculateTotalLabelsHeight();
-var scene = new ScrollMagic.Scene({
-  triggerElement: "#pinned",
-  duration: labelsHeight,
-})
-  .setPin("#pinned")
-  .addIndicators({ name: "1 (duration: 300)" })
-  .addTo(controller);
-
-const bodyColumnButtons = document.querySelectorAll(".bodyColumn__button");
+console.log("hello");
+//
+const bodyColumnButtons = document.querySelectorAll(" .bodyColumn__button");
 const circles = document.querySelectorAll(".circle");
 
 const handleEvent = (event) => {
@@ -117,6 +102,43 @@ circles.forEach((circle) => {
   circle.addEventListener("click", handleBodyEvent);
 });
 
-// Assuming you have included ScrollMagic library and initialized a controller
+if (window.innerWidth < 600) {
+  gsap.registerPlugin(ScrollTrigger);
 
-// Function to calculate the total height of labels
+  const container = document.getElementById("pinned");
+
+  const containerTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top top",
+      end: () => "+=" + container.scrollWidth,
+      scrub: 1.6,
+      pin: true,
+      invalidateOnRefresh: true,
+    },
+  });
+  const flex = document.getElementById("flexsection");
+  window.addEventListener("scroll", () => {
+    const horizontalScroll = window.scrollY;
+    flex.scrollLeft = horizontalScroll;
+  });
+  const lastLabel = bodyColumnButtons[bodyColumnButtons.length - 1];
+  const getScrollEnd = () => {
+    const containerRect = container.getBoundingClientRect();
+    const labelRect = lastLabel.getBoundingClientRect();
+
+    return containerRect.width - labelRect.right;
+  };
+
+  bodyColumnButtons.forEach((label, index) => {
+    ScrollTrigger.create({
+      trigger: label,
+      start: "left center",
+      end: () => `+=${getScrollEnd()}px`,
+      horizontal: true,
+      toggleClass: { targets: label, className: "red" },
+      scrub: 1.6,
+      invalidateOnRefresh: true,
+    });
+  });
+}
