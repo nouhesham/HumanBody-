@@ -1,0 +1,1 @@
+ -This is a task for an internship acceptance where I have used simple click event targeting and some animations
